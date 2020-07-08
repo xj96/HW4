@@ -1,0 +1,121 @@
+<!-- Document Object Model -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>My Quiz</h1>
+
+    <div>
+        Time: <span id="count-down"> </span> seconds
+    </div>
+
+    <div>
+        Score: <span id="score-number"></span>
+    </div>
+
+    <div>
+        <h2 id="question">Click START</h2>
+        <div>
+            <h3><span id="answers"></span></h3>
+        </div>
+    </div>
+
+    <div>
+        <div>
+            <button id="start">Start</button>
+        </div>
+        <br>
+        <input type="text" name="" id="">
+        <br>
+        <div>
+            <button id="next-question-btn">Next</button>
+            <button id="submit-btn">Submit</button>
+        </div>
+        <br>
+        <div>
+            <button id="high-score-btn">High Scores</button>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // GIVEN I am taking a code quiz
+        // WHEN I click the start button
+        // THEN a timer starts and I am presented with a question: DONE
+        // WHEN I answer a question
+        // THEN I am presented with another question
+        // WHEN I answer a question incorrectly
+        // THEN time is subtracted from the clock
+        // WHEN all questions are answered or the timer reaches 0
+        // THEN the game is over
+        // WHEN the game is over
+        // THEN I can save my initials and score
+        console.log(this)
+        var gameTime = 60;
+        var score = 0;
+        var questionIndex = 0;
+        var answersIndex = 0;
+        const startBtn = document.getElementById('start');
+        const nextBtn = document.getElementById('next-question-btn')
+        const question = document.getElementById('question');
+        const answers = document.getElementById('answers');
+        const countDown = document.getElementById('count-down');
+
+        var questionArray = [
+            {
+                Q: "What is 3+3?", A: "6",
+                ac: [" A: 2 ", " B: 4 ", " C: 6 ", " D: 8 "]
+            },
+            {
+                Q: "What is 10-8?", A: "2",
+                ac: [" A: 1 ", " B: 2 ", " C: 3 ", " D: 4 "]
+            },
+            {
+                Q: "What is 3*3?", A: "9",
+                ac: [" A: 3 ", " B: 6 ", " C: 9 ", " D: 12 "]
+            },
+            {
+                Q: "What is 125/5?", A: "25",
+                ac: [" A: 10 ", " B: 15 ", " C: 20 ", " D: 25 "]
+            },
+        ]
+
+        function startGame() {
+            // start timer
+            var timer = setInterval(tick, 1000)
+            // clear score
+
+            // display first question
+            nextQuestion()
+        }
+
+        function tick() {
+            // time goes down by 1
+            gameTime--;
+            // display new time
+            countDown.textContent = gameTime
+        }
+
+        function nextQuestion() {
+            // display question
+            question.textContent = questionArray[questionIndex++].Q
+            // display answer choices
+            answers.textContent = questionArray[answersIndex++].ac
+        }
+
+
+
+        startBtn.onclick = startGame
+        nextBtn.onclick = nextQuestion
+
+
+    </script>
+</body>
+
+</html>
