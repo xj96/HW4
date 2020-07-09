@@ -1,0 +1,3 @@
+Assignment: Code Quiz
+
+Description: For this assignment I was tasked with creating a quiz where the user answers questions within a time limit, and when the time limit reaches 0 or all questions have been answered the game will be over. Once the game is over users can input their initials along with a high score. I received a lot of help with this assignment from my tutor. I was able to get the basic functionality of the quiz and understand the code better to where I can do some things on my own while using psuedo code to help with the development process. I was unable to get the high score and initial part running but I am proud of what I was able to accomplish with the quiz itself. I have very little experience with JavaScript and have a lot of studying to do.
